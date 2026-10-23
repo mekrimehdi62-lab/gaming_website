@@ -21,10 +21,17 @@ const Hero = () => {
   }
 
   useEffect(() => {
-    if (loadedVideos === 3) {
+    if (loadedVideos >= 2) {
       setIsLoading(false);
     }
   }, [loadedVideos]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useGSAP(() => {
     if(hasClicked){
@@ -77,7 +84,7 @@ const Hero = () => {
     setHasClicked(true);
     setCurrentIndex(upcomingVideo);
    }
-    const getNextVideo = (index) => `/videos/hero-${index}.mp4`
+    const getNextVideo = (index) => `${import.meta.env.BASE_URL}videos/hero-${index}.mp4`
 
 
   return (
@@ -109,6 +116,7 @@ const Hero = () => {
                 id='current-video'
                 className='size-64 origin-center scale-150 object-cover object-center'
                 onLoadedData={handleVideoLoad}
+                onError={handleVideoLoad}
               />
             </div>
           </div>
@@ -120,6 +128,7 @@ const Hero = () => {
             id='next-video'
             className='absolute-center invisible absolute z-20 size-64 object-cover object-center'
             onLoadedData={handleVideoLoad}
+            onError={handleVideoLoad}
             />
             <video
               src={getNextVideo(currentIndex)}
@@ -128,6 +137,7 @@ const Hero = () => {
               muted
               className='absolute left-0 top-0 size-full object-cover object-center'
               onLoadedData={handleVideoLoad}
+              onError={handleVideoLoad}
             />
         </div>
 

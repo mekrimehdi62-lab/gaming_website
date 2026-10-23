@@ -93,7 +93,7 @@ const Features = () => {
       <div className='border-hsla relative mb-7 h-96 w-full 
       overflow-hidden rounded-md  md:h-[65vh]'>
         <BentoCard
-        src="/videos/feature-1.mp4"
+        src={`${import.meta.env.BASE_URL}videos/feature-1.mp4`}
         title={<>radi<b>n</b>t</>}
         description=" A cross-platform tool for building beautiful, interactive web experiences"
         
@@ -108,7 +108,7 @@ const Features = () => {
         <BentoTilt className='bento-tilt_1 row-span-1 md:col-span-1
         md:row-span-2 '>
           <BentoCard
-          src="/videos/feature-2.mp4"
+          src={`${import.meta.env.BASE_URL}videos/feature-2.mp4`}
           title={<>s<b>ig</b>ma</>}
           description=" A cross-platform tool for building beautiful, interactive web experiences"
          />
@@ -117,7 +117,7 @@ const Features = () => {
         <BentoTilt className='bento-tilt_1 row-span-1 ms-32 md:col-span-1
         md:row-span-2 md:ms-0'>
           <BentoCard
-          src="/videos/feature-3.mp4"
+          src={`${import.meta.env.BASE_URL}videos/feature-3.mp4`}
           title={<>n<b>e</b>xus</>}
           description=" A cross-platform tool for building beautiful, interactive web experiences"
          />
@@ -125,7 +125,7 @@ const Features = () => {
          <BentoTilt className='bento-tilt_1 me-14 md:col-span-1
         md:row-span-2 md:ms-0'>
           <BentoCard
-          src="/videos/feature-4.mp4"
+          src={`${import.meta.env.BASE_URL}videos/feature-4.mp4`}
           title={<>a<b>z</b>e</>}
           description=" A cross-platform tool for building beautiful, interactive web experiences"
          />
@@ -141,7 +141,7 @@ const Features = () => {
             </div>
         </BentoTilt> 
         <BentoTilt className='bento-tilt_2'>
-          <video src="/videos/feature-5.mp4" autoPlay loop muted 
+          <video src={`${import.meta.env.BASE_URL}videos/feature-5.mp4`} autoPlay loop muted 
           className='size-full object-cover object-center'/>
         </BentoTilt>
       </div>
